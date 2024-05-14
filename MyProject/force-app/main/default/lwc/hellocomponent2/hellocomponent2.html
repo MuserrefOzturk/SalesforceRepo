@@ -7,11 +7,10 @@
 -->
 <template>
     <lightning-card  variant="Narrow"  title={titletext} icon-name="standard:account">
-        <lightning-button-icon  icon-name="utility:down" variant="border-filled" alternative-text="Show More" slot="actions"></lightning-button-icon>
+        <lightning-button-icon  icon-name="utility:down" 
+        variant="border-filled" alternative-text="Show More" 
+        slot="actions" onclick={handler}></lightning-button-icon>
         <p class="slds-p-horizontal_small">Here is my component.</p>
         <p slot="footer">{footertext}</p>
     </lightning-card>
 </template>
-
-
-
