@@ -1,0 +1,19 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 05-16-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card  variant="Narrow"  title="Hello Parent" icon-name="standard:account">
+        <lightning-button-icon  icon-name="utility:down" variant="border-filled" alternative-text="Show More" slot="actions"></lightning-button-icon>
+        <p class="slds-p-horizontal_small">This is parent component</p>
+        <p slot="footer">Card Footer</p>
+    </lightning-card>
+<c-hellochild titletext=" Title from parent" footertext=" footer 1"></c-hellochild>
+<c-hellochild titletext=" Title 2" footertext=" footer 2"></c-hellochild>
+<c-hellochild titletext=" Title 3" footertext=" footer 3"></c-hellochild>
+
+    
+</template>
