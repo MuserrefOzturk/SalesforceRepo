@@ -11,6 +11,7 @@ export default class Hellochild extends LightningElement {
    @api changetitle(){
 
   this.titletext='method run';
+  this.footertext='footer changed.';
     }
 
 }
