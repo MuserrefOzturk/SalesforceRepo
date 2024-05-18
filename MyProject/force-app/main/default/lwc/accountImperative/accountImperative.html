@@ -6,13 +6,13 @@
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 -->
 <template>
-    <lightning-card  variant="Narrow"  title="Account Component by wire dekorator" icon-name="standard:account">
+    <lightning-card  variant="Narrow"  title="Account Component by Imperative" icon-name="standard:account">
         <lightning-button-icon  icon-name="utility:down" variant="border-filled" alternative-text="Show More" slot="actions"></lightning-button-icon>
         <p class="slds-p-horizontal_small">
 
-            <template if:true={Accounts.data}>
+            <template if:true={multiAccounts}>
 
-<template for:each={Accounts.data} for:item='Account'>
+<template for:each={multiAccounts} for:item='Account'>
 
     <p key={Account.Id}>{Account.Name}-{Account.Id}</p>
 </template>
