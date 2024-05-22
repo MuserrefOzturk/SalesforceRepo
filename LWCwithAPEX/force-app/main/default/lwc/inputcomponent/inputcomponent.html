@@ -2,7 +2,7 @@
   @description       : 
   @author            : ChangeMeIn@UserSettingsUnder.SFDoc
   @group             : 
-  @last modified on  : 05-20-2024
+  @last modified on  : 05-22-2024
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 -->
 <template>
@@ -12,12 +12,23 @@
             <lightning-input type="text" label="Enter some text" value={searchtext} onchange={changehandler}></lightning-input>
 
             <template if:true={Accounts.data}>
-            </template>
+            
             <template for:each={Accounts.data} for:item='Account'>
-             
-                <p key={Account.Id}> {Account.Name} - {Account.Id} </p>
 
+                <p key={Account.Id}>{Account.Name} - {Account.Id}</p>
+             
+              <!--  <lightning-card key={Account.Id} variant="Narrow"  title= {Account.Name} icon-name="standard:account">
+                    <lightning-button-icon  icon-name="utility:down" variant="border-filled" alternative-text="Show More" slot="actions"></lightning-button-icon>
+                    <p class="slds-p-horizontal_small">
+
+                        {Account.Phone} <br/>
+                        {Account.Industry} <br/>
+                    </p>
+                    <p slot="footer">{Acoount.Id}</p>
+                </lightning-card>
+            -->
             </template>
+        </template>
         </p>
         <p slot="footer">Last 10 Account</p>
     </lightning-card>

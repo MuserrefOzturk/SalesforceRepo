@@ -11,20 +11,24 @@ searchtext;
 @wire(getList,{searchterm:'$searchtext'}) Accounts;
 
 
-renderedCallback() {
+/*renderedCallback() {
     console.log(this.Accounts);
 }
 
-
+*/
 
 changehandler(event){
 this.searchtext=event.target.value;
 console.log(this.searchtext);
 }
 
+
 connectedCallback(){
+
 /*
-getList()
+getList({
+    searchterm:This.searchtext
+})
 
 .then(data => {
     this.multiacc=data;
