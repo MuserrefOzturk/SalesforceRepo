@@ -3,8 +3,8 @@ import getList  from "@salesforce/apex/inputWithTable.retrive";
 
 
 const columns = [
-    { label: 'First Name', fieldName: 'FirstName' },
-    { label: 'Last Name', fieldName: 'LastName' },
+    { label: 'Name', fieldName: 'Name' },
+    
     { label: 'Phone', fieldName: 'Phone', type: 'phone' },
     
 ];
