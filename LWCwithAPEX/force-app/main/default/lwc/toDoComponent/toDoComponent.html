@@ -1,0 +1,30 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 05-27-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card  variant="Narrow"  title="To Do Component" icon-name="standard:account">
+        <p class="slds-p-horizontal_small">
+
+            <span onkeypress={keycheck}>
+            <lightning-input type="text" label="Enter task" value={task} onchange={textchange}></lightning-input>
+            </span>
+        </p>
+        
+    </lightning-card>
+
+    <lightning-card  variant="Narrow"  title="Task List" icon-name="standard:account">
+
+        <template if:true={tasklist}>
+
+            <template for:each={tasklist} for:item='taskitem'>
+
+                <p key={taskitem.id}>{taskitem.isDelete} - {taskitem.isDone} = {taskitem.title}</p>
+            </template>
+        </template>
+        
+    </lightning-card>
+</template>
