@@ -13,4 +13,6 @@ export default class Controls extends LightningElement {
           detail: factor
         }));
       }
+
+      factors = [0,2,3,4,5,6];
 }
