@@ -1,0 +1,10 @@
+{
+  "main": "bankapi.raml",
+  "name": "bankApi",
+  "classifier": "raml",
+  "apiVersion": "v1",
+  "descriptorVersion": "1.0.0",
+  "groupId": null,
+  "assetId": "bankapi",
+  "version": "1.0.0"
+}

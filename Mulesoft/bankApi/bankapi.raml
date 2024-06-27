@@ -1,0 +1,91 @@
+#%RAML 1.0
+title: bankApi
+
+resourceTypes:
+    healthcheck:
+      get:
+        description: Get <<resourcePathName | !uppercase >>
+        responses:
+          200:
+            body:
+              application/json:
+                example:
+                  {
+                  time: "9.42 am",
+                  health: "ok"
+                } 
+    otherresource:
+      get:
+        description: Get <<resourcePathName | !uppercase >>
+        responses:
+          200:
+            body:
+              application/json:
+                example:
+                  {
+                  time: "08.23 pm",
+                  health: "ok"
+                }
+                                                                                                      
+
+traits:
+  verificationtype:
+    queryParameters:
+      username: string
+      password: string
+      <<typeOfOtp>> : string
+      
+
+/health:
+  type:
+    healthcheck:
+
+      
+/health2:
+  type:
+    otherresource:
+    
+/getAccountSummary:
+  description: "To get bank account details of a customer "
+  get:
+    queryParameters:
+      accountnumber:
+        type: number
+    is:
+      - {verificationtype : {typeOfOtp: "mobileOtp"}}
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {
+                "BankAccountNumber" : 12345,
+                "Name" : "Muserref",
+                "Country" : "Turkey"
+            }
+/createAccount:
+  description: "To create another account "
+  post:
+    queryParameters:
+      branch: string
+    is:
+      - {verificationtype : {typeOfOtp: "emailOtp"}}
+    body:
+        application/json:
+          type: !include createAccountrequest.raml
+          example: !include requestexample.raml
+          
+              
+    responses:
+      201:
+        body:
+          application/json:
+            example:
+              {
+                "message" : "Account Created."
+              }
+      
+    
+      
+            
+                

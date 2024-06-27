@@ -1,0 +1,28 @@
+#%RAML 1.0 DataType
+type: object
+properties:
+  accountNumber : number
+  address : 
+    type: array
+    items:
+      properties:
+        typeOfAddress:
+         type: string
+         enum:
+          - "home"
+          - "work"
+        city :
+         type: string
+         minLength: 3
+         maxLength: 10
+        zip : 
+         type: number
+         minimum: 0000
+         maximum: 9999
+
+                      
+      
+      
+      
+      
+  
